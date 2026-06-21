@@ -1,0 +1,242 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 20px 40px;
+  background: var(--bg);
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.appName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary), #9c63ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 4px 0 0;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border-radius: 28px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border);
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 20px;
+  color: var(--text);
+}
+
+.error {
+  background: rgba(217, 79, 79, 0.12);
+  border: 1px solid rgba(217, 79, 79, 0.4);
+  color: #ff6b6b;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Social buttons ──────────────────────────────────────────────────────────── */
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btnSocial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btnSocial:disabled { opacity: 0.6; cursor: not-allowed; }
+.btnSocial:not(:disabled):active { transform: scale(0.97); }
+
+.btnGoogle {
+  background: #fff;
+  color: #333;
+  border: 1.5px solid #e0e0e0;
+}
+
+.btnFacebook {
+  background: #1877f2;
+  color: #fff;
+}
+
+.legal {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.legal a { color: var(--primary); text-decoration: none; }
+.legal a:hover { text-decoration: underline; }
+
+/* ── Confirm sign-in overlay ─────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 200;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.sheet {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px 24px 0 0;
+  padding: 16px 24px 32px;
+  width: 100%;
+  max-width: 480px;
+  animation: slideUp 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.sheetHandle {
+  width: 40px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.confirmProvider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.confirmDesc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.confirmProfile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface-hover);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+
+.confirmAvatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.confirmAvatarFallback {
+  background: linear-gradient(135deg, var(--primary), #9c63ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.confirmName  { font-weight: 700; font-size: 1rem; margin: 0 0 2px; }
+.confirmEmail { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+.confirmBtns {
+  display: flex;
+  gap: 10px;
+}
+
+.btnCancel,
+.btnContinue {
+  flex: 1;
+  padding: 13px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.btnCancel:disabled,
+.btnContinue:disabled { opacity: 0.5; cursor: not-allowed; }
+.btnCancel:not(:disabled):active,
+.btnContinue:not(:disabled):active { transform: scale(0.97); }
+
+.btnCancel   { background: var(--surface-hover); color: var(--text); border: 1px solid var(--border); flex: 0.6; }
+.btnContinue { background: var(--primary); color: #fff; flex: 1.4; }

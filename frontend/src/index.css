@@ -1,0 +1,66 @@
+/* ── CSS Variables ────────────────────────────────────────────────────────── */
+:root {
+  --bg:            #0f0f1a;
+  --surface:       #1a1a2e;
+  --surface-hover: #22223a;
+  --border:        #2a2a45;
+  --text:          #eaeaea;
+  --text-muted:    #7a7a9a;
+  --primary:       #e63946;
+  --accent:        #f4a261;
+  --success:       #2ec4b6;
+
+  color-scheme: dark;
+}
+
+/* Light theme (applied when user chooses it via Settings) */
+[data-theme='light'] {
+  --bg:            #f5f5f0;
+  --surface:       #ffffff;
+  --surface-hover: #f0f0ea;
+  --border:        #e0e0d8;
+  --text:          #1a1a2e;
+  --text-muted:    #6b6b85;
+
+  color-scheme: light;
+}
+
+/* ── Reset & Base ─────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  line-height: inherit;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
