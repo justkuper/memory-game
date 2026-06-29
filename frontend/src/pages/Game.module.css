@@ -1,12 +1,14 @@
 .page {
-  min-height: 100vh;
+  flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.5rem 2rem;
-  gap: 1.25rem;
+  padding: 0.75rem 1rem;
+  gap: 0.75rem;
   max-width: 900px;
   margin: 0 auto;
   width: 100%;
+  overflow: hidden;
 }
 
 /* ── Header ─────────────────────────────────────────────────────────────────── */
@@ -83,13 +85,43 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 0.75rem;
   flex: 1;
+  min-height: 0;
 }
 
-@media (max-width: 560px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
-  .stats { display: none; }
+@media (max-width: 600px) {
+  .page {
+    padding: 0.4rem 0.4rem;
+    gap: 0.35rem;
+  }
+  .header {
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+  }
+  .back {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.7rem;
+  }
+  .levelTabs {
+    padding: 0.15rem;
+    gap: 0.15rem;
+  }
+  .tab {
+    padding: 0.2rem 0.35rem;
+    font-size: 0.65rem;
+  }
+  .stats {
+    gap: 0.25rem;
+  }
+  .stat {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.3rem;
+  }
+  .grid {
+    gap: 0.35rem;
+  }
 }
 
 /* ── Finished overlay ───────────────────────────────────────────────────────── */

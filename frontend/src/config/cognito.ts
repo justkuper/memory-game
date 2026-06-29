@@ -79,7 +79,7 @@ export async function exchangeCodeForTokens(code: string): Promise<TokenSet> {
     throw new Error(`Token exchange failed: ${err}`);
   }
 
-  const tokens: TokenSet = await res.json();
+  const tokens = await res.json() as TokenSet;
   sessionStorage.removeItem('pkce_verifier');
   sessionStorage.removeItem('pkce_state');
   return tokens;

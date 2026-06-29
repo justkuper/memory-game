@@ -26,6 +26,12 @@ export default function Game() {
 
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  // Lock viewport height while game is active (prevents scrolling on mobile)
+  useEffect(() => {
+    document.documentElement.classList.add('game-mode');
+    return () => document.documentElement.classList.remove('game-mode');
+  }, []);
+
   // Load user's preferred level from settings
   useEffect(() => {
     if (!user) return;
